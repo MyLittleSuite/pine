@@ -1,6 +1,6 @@
 # Pine
 
-<img align="center" src="assets/pine_logo.png" width="350" alt="Pine logo" border="0">
+<img align="center" src="https://raw.githubusercontent.com/MyLittleSuite/pine/master/assets/pine_logo.png" width="350" alt="Pine logo" border="0">
 
 A lightweight architecture helper for your Flutter projects
 
@@ -57,10 +57,10 @@ Elements are injected from top to bottom.
 Each element might rely on the top level ones and are generally accessed from the bottom level ones: for instance a repository may need to access to a REST client service to gather data, save it into a database, and the return it to a BLoC.
 To access top-level items, you can use the read and watch functions exposed by Provider.
 
-<img src="assets/architecture.png" alt="Pine logo" border="0">
+<img src="https://raw.githubusercontent.com/MyLittleSuite/pine/master/assets/architecture.png" alt="Pine logo" border="0">
 
 #### The interactions
-<img src="assets/interaction.png" alt="Pine logo" border="0">
+<img src="https://raw.githubusercontent.com/MyLittleSuite/pine/master/assets/interaction.png" alt="Pine logo" border="0">
 
 ## Usage
 
