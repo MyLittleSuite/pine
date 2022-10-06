@@ -39,7 +39,7 @@ class ArticleMapper extends DTOMapper<ArticleDTO, Article> {
       );
 
   @override
-  DTO toDTO(Article model) => ArticleDTO(
+  ArticleDTO toDTO(Article model) => ArticleDTO(
         title: model.title,
         description: model.description,
         urlToImage: model.urlToImage,

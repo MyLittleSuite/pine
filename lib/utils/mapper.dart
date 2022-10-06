@@ -34,5 +34,5 @@ abstract class Mapper<F, T> {
 abstract class DTOMapper<DTO extends dto.DTO, Model> {
   Model fromDTO(DTO dto);
 
-  dto.DTO toDTO(Model model);
+  DTO toDTO(Model model);
 }
