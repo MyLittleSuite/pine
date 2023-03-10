@@ -37,7 +37,7 @@ dependencies:
   retrofit: ^3.0.1+1
   dio: ^4.0.6
   equatable: ^2.0.5
-  webview_flutter: ^3.0.4
+  webview_flutter: ^4.0.0
 
 dev_dependencies:
   flutter_test:
