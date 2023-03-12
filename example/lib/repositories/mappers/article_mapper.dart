@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 MyLittleSuite
+ * Copyright (c) 2023 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -28,6 +28,9 @@ import 'package:news_app/services/responses/article_dto.dart';
 import 'package:pine/pine.dart';
 
 class ArticleMapper extends DTOMapper<ArticleDTO, Article> {
+
+  const ArticleMapper();
+
   @override
   Article fromDTO(ArticleDTO dto) => Article(
         title: dto.title,

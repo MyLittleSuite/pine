@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 MyLittleSuite
+ * Copyright (c) 2023 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -31,7 +31,7 @@ class EverythingResponse extends DTO {
   final int totalResults;
   final List<ArticleDTO> articles;
 
-  EverythingResponse({
+  const EverythingResponse({
     required this.status,
     required this.totalResults,
     required this.articles,

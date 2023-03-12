@@ -1,3 +1,7 @@
+## 1.0.2.
+
+* Mapper, DTOMapper and DTO are now constants
+
 ## 1.0.1.
 
 * Fixed DTOMapper subtype

@@ -1,6 +1,6 @@
 name: pine
 description: A lightweight architecture helper for your Flutter projects.
-version: 1.0.1
+version: 1.0.2
 repository: https://github.com/MyLittleSuite/pine
 issue_tracker: https://github.com/MyLittleSuite/pine/issues
 homepage: https://www.mylittlesuite.com
@@ -12,8 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.1
-  provider: ^6.0.3
+  flutter_bloc: ^8.1.2
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:

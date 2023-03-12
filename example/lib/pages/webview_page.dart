@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 MyLittleSuite
+ * Copyright (c) 2023 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -27,7 +27,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewPage extends StatelessWidget {
+class WebViewPage extends StatefulWidget {
   final Article article;
 
   const WebViewPage(
@@ -36,15 +36,40 @@ class WebViewPage extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<StatefulWidget> createState() => _WebViewPageState();
+}
+
+class _WebViewPageState extends State<WebViewPage> {
+  final WebViewController _controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..setBackgroundColor(const Color(0x00000000))
+    ..setNavigationDelegate(
+      NavigationDelegate(
+        onProgress: (int progress) {
+          // Update loading bar.
+        },
+        onPageStarted: (String url) {},
+        onPageFinished: (String url) {},
+        onWebResourceError: (WebResourceError error) {},
+      ),
+    );
+
+  @override
+  void initState() {
+    _controller.loadRequest(Uri.parse(widget.article.url));
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(article.title),
+          title: Text(widget.article.title),
         ),
         body: _webView(),
       );
 
-  Widget _webView() => WebView(
-        key: Key('webview_${article.url}'),
-        initialUrl: article.url,
+  Widget _webView() => WebViewWidget(
+        key: Key('webview_${widget.article.url}'),
+        controller: _controller,
       );
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 MyLittleSuite
+ * Copyright (c) 2023 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -26,12 +26,16 @@
 import 'package:pine/dto/dto.dart' as dto;
 
 abstract class Mapper<F, T> {
+  const Mapper();
+  
   T from(F from);
 
   F to(T to);
 }
 
 abstract class DTOMapper<DTO extends dto.DTO, Model> {
+  const DTOMapper();
+  
   Model fromDTO(DTO dto);
 
   DTO toDTO(Model model);
