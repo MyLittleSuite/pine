@@ -23,8 +23,6 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import 'package:pine/dto/dto.dart' as dto;
-
 abstract class Mapper<F, T> {
   const Mapper();
   
@@ -33,10 +31,8 @@ abstract class Mapper<F, T> {
   F to(T to);
 }
 
-abstract class DTOMapper<DTO extends dto.DTO, Model> {
-  const DTOMapper();
-  
-  Model fromDTO(DTO dto);
+extension MapperExtension<F, T> on Mapper<F, T> {
+  Iterable<T> fromMany(Iterable<F> fromList) => fromList.map(from);
 
-  DTO toDTO(Model model);
+  Iterable<F> toMany(Iterable<T> toList) => toList.map(to);
 }
