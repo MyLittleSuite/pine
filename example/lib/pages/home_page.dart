@@ -31,7 +31,7 @@ import 'package:news_app/pages/webview_page.dart';
 import 'package:news_app/widgets/article_widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(

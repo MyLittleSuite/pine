@@ -28,3 +28,4 @@ library pine;
 export 'di/dependency_injector_helper.dart';
 export 'dto/dto.dart';
 export 'utils/mapper.dart';
+export 'utils/dto_mapper.dart';

@@ -32,8 +32,8 @@ class WebViewPage extends StatefulWidget {
 
   const WebViewPage(
     this.article, {
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<StatefulWidget> createState() => _WebViewPageState();

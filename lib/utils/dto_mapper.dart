@@ -23,38 +23,18 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/blocs/news/news_bloc.dart';
-import 'package:news_app/models/article.dart';
-import 'package:news_app/repositories/mappers/article_mapper.dart';
-import 'package:news_app/repositories/news_repository.dart';
-import 'package:news_app/services/news_service.dart';
-import 'package:news_app/services/responses/article_dto.dart';
-import 'package:pine/pine.dart';
-import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
+import 'package:pine/dto/dto.dart';
 
-part 'blocs.dart';
-part 'mappers.dart';
-part 'providers.dart';
-part 'repositories.dart';
+abstract class DTOMapper<Source extends DTO, Model> {
+  const DTOMapper();
 
-class DependencyInjector extends StatelessWidget {
-  final Widget child;
+  Model fromDTO(Source dto);
 
-  const DependencyInjector({
-    super.key,
-    required this.child,
-  });
+  Source toDTO(Model model);
+}
 
-  @override
-  Widget build(BuildContext context) => DependencyInjectorHelper(
-        blocs: _blocs,
-        providers: _providers,
-        repositories: _repositories,
-        mappers: _mappers,
-        child: child,
-      );
+extension DTOMapperExtension<Source extends DTO, Model> on DTOMapper<Source, Model> {
+  Iterable<Model> fromDTOMany(Iterable<Source> dtoList) => dtoList.map(fromDTO);
+
+  Iterable<Source> toDTOMany(Iterable<Model> modelList) => modelList.map(toDTO);
 }

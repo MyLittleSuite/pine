@@ -1,3 +1,8 @@
+## 1.0.3.
+
+* Bumped dependencies
+* Added collection utils
+
 ## 1.0.2.
 
 * Mapper, DTOMapper and DTO are now constants

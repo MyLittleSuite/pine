@@ -30,7 +30,7 @@ in your [pubspec.yaml](https://dart.dev/tools/pub/pubspec):
 
 ```yaml
 dev_dependencies:
-  pine: ^1.0.2
+  pine: ^1.0.3
 ```
 
 You can install packages from the command line:

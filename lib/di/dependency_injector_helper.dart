@@ -36,13 +36,13 @@ class DependencyInjectorHelper extends StatelessWidget {
   final Widget child;
 
   const DependencyInjectorHelper({
-    Key? key,
+    super.key,
     this.providers,
     this.repositories,
     this.mappers,
     this.blocs,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

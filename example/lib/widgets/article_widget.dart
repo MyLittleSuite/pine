@@ -32,9 +32,9 @@ class ArticleWidget extends StatelessWidget {
 
   const ArticleWidget(
     this.article, {
-    Key? key,
+    super.key,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) => ListTile(
