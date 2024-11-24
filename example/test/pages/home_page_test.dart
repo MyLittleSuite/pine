@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 MyLittleSuite
+ * Copyright (c) 2024 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -30,7 +30,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:news_app/blocs/news/news_bloc.dart';
 import 'package:news_app/models/article.dart';
 import 'package:news_app/pages/home_page.dart';
-import 'package:pine/di/dependency_injector_helper.dart';
+import 'package:pine/pine.dart';
 
 class MockNewsBloc extends MockBloc<NewsEvent, NewsState> implements NewsBloc {}
 

@@ -1,0 +1,16 @@
+builders:
+  pine_analyze:
+    import: "package:pine_generator/pine_generator.dart"
+    builder_factories: [ "pineAnalyze" ]
+    build_extensions: { ".dart": [ ".pine.json" ] }
+    auto_apply: dependents
+    build_to: cache
+    runs_before:
+      - pine_generator:pine_di
+
+  pine_di:
+    import: "package:pine_generator/pine_generator.dart"
+    builder_factories: [ "pineDI" ]
+    build_extensions: { ".dart": [ ".di.pine.dart" ] }
+    auto_apply: dependents
+    build_to: source

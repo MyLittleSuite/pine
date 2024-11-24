@@ -1,0 +1,3 @@
+dependency_overrides:
+  pine_annotations:
+    path: ../pine_annotations

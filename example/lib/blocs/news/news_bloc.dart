@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 MyLittleSuite
+ * Copyright (c) 2024 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -27,10 +27,12 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/models/article.dart';
 import 'package:news_app/repositories/news_repository.dart';
+import 'package:pine_annotations/pine_annotations.dart';
 
 part 'news_event.dart';
 part 'news_state.dart';
 
+@Seed()
 class NewsBloc extends Bloc<NewsEvent, NewsState> {
   final NewsRepository newsRepository;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 MyLittleSuite
+ * Copyright (c) 2024 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -27,11 +27,13 @@ import 'package:news_app/models/article.dart';
 import 'package:news_app/services/news_service.dart';
 import 'package:news_app/services/responses/article_dto.dart';
 import 'package:pine/pine.dart';
+import 'package:pine_annotations/pine_annotations.dart';
 
 abstract class NewsRepository {
   Future<List<Article>> get news;
 }
 
+@Seed()
 class NewsRepositoryImpl extends NewsRepository {
   final NewsService newsService;
   final DTOMapper<ArticleDTO, Article> mapper;

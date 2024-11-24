@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 MyLittleSuite
+ * Copyright (c) 2024 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -24,14 +24,17 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:news_app/di/dependency_injector.dart';
+import 'package:news_app/app.di.pine.dart';
 import 'package:news_app/pages/home_page.dart';
+import 'package:pine_annotations/pine_annotations.dart';
 
+@SeedContainer()
 class App extends StatelessWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) => DependencyInjector(
+  Widget build(BuildContext context) => PineSeeded(
+        onNewsBlocInit: (_, bloc) => bloc.fetchNews(),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'News App',

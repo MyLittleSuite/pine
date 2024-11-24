@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 MyLittleSuite
+ * Copyright (c) 2024 MyLittleSuite
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -23,20 +23,25 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' hide Headers, Dio;
+import 'package:news_app/services/dio.dart';
 import 'package:news_app/services/responses/everything_response.dart';
-import 'package:retrofit/retrofit.dart' as retrofit;
+import 'package:pine_annotations/pine_annotations.dart';
+import 'package:retrofit/retrofit.dart';
 
 part 'news_service.g.dart';
 
-@retrofit.RestApi()
+@RestApi()
+@Seed(constructorParams: {
+  'baseUrl': 'https://newsapi.org/v2/',
+})
 abstract class NewsService {
   factory NewsService(Dio dio, {String? baseUrl}) =>
       _NewsService(dio, baseUrl: baseUrl);
 
-  @retrofit.GET('everything')
-  @retrofit.Headers({'Authorization': 'Bearer <token>'})
+  @GET('everything')
+  @Headers({'Authorization': 'Bearer <token>'})
   Future<EverythingResponse> articles({
-    @retrofit.Query('q') String query = 'italy',
+    @Query('q') String query = 'italy',
   });
 }
