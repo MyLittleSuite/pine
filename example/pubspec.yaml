@@ -24,7 +24,7 @@ dev_dependencies:
   retrofit_generator: ^8.0.4
   build_runner: ^2.4.6
   json_serializable: ^6.7.1
-  bloc_test: ^9.1.5
+  bloc_test: ^10.0.0
   mockito: ^5.4.2
 flutter:
   uses-material-design: true
