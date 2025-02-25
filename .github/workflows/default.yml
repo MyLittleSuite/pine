@@ -16,5 +16,8 @@ jobs:
     uses: ./.github/workflows/analyze.yml
 
   release:
+    needs:
+      - test
+      - analyze
     name: Flutter
     uses: ./.github/workflows/release.yml
