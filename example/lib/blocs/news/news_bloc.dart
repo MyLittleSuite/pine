@@ -40,7 +40,8 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
 
   void fetchNews() => add(FetchNewsEvent());
 
-  void _mapFetchNewsEventToState(_, Emitter<NewsState> emit) async {
+  void _mapFetchNewsEventToState(
+      FetchNewsEvent _, Emitter<NewsState> emit) async {
     emit(FetchingNewsState());
 
     List<Article>? articles;
