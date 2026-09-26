@@ -26,7 +26,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:pine/pine.dart';
 
-class ArticleDTO extends DTO with EquatableMixin {
+class ArticleDTO extends DTO with Equatable {
   final String title;
   final String description;
   final String? urlToImage;
