@@ -14,7 +14,7 @@ dependencies:
   provider: ^6.1.1
   retrofit: ^4.0.3
   dio: ^5.3.3
-  equatable: ^2.0.5
+  equatable: ^3.0.0
   webview_flutter: ^4.4.2
 
 dev_dependencies:
