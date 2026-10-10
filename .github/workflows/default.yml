@@ -16,9 +16,14 @@ jobs:
     uses: ./.github/workflows/analyze.yml
 
   build:
-    name: Flutter
+    name: Flutter ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [android, ios, web, linux, macos, windows]
     uses: ./.github/workflows/build.yml
     with:
+      platform: ${{ matrix.platform }}
       working-directory: example
 
   release:
