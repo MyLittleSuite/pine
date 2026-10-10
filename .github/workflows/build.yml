@@ -1,0 +1,20 @@
+name: Build Example
+
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+      - name: Setup Flutter
+        uses: ./.github/actions/setup
+      - name: Build Web
+        working-directory: ${{ inputs.working-directory }}
+        run: flutter build web --release
